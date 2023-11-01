@@ -1,0 +1,39 @@
+From: "jikamens@gmail.com" <jikamens@gmail.com>
+Date: Sun, 11 Oct 2015 11:59:06 +0200
+Subject: Fix status reported for redirections
+
+Bug: https://code.google.com/p/feedparser/issues/detail?id=390
+Bug-Debian: http://bugs.debian.org/738102
+Reviewed-by: Etienne Millon <me@emillon.org>
+
+Patch-Name: redirect-status.patch
+---
+ feedparser/http.py | 1 +
+ tests/runtests.py  | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/feedparser/http.py b/feedparser/http.py
+index 92f6945..3d6dd3e 100644
+--- a/feedparser/http.py
++++ b/feedparser/http.py
+@@ -220,6 +220,7 @@ def get(url, etag=None, modified=None, agent=None, referrer=None, handlers=None,
+ 
+     # Stop processing if the server sent HTTP 304 Not Modified.
+     if getattr(f, 'code', 0) == 304:
++        result['status'] = 304
+         result['version'] = ''
+         result['debug_message'] = 'The feed has not changed since you last checked, ' + \
+             'so the server sent no data.  This is a feature, not a bug!'
+diff --git a/tests/runtests.py b/tests/runtests.py
+index ac8bb8f..612674b 100644
+--- a/tests/runtests.py
++++ b/tests/runtests.py
+@@ -597,7 +597,7 @@ class TestHTTPStatus(unittest.TestCase):
+         u = 'http://localhost:8097/tests/http/http_redirect_to_304.xml'
+         f = feedparser.parse(u)
+         self.assertTrue(f.bozo == 0)
+-        self.assertTrue(f.status == 302)
++        self.assertTrue(f.status == 304)
+ 
+ 
+ class TestDateParsers(unittest.TestCase):
