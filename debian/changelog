@@ -1,5 +1,336 @@
-template-repository (1.0-1) unstable; urgency=medium
+feedparser (6.0.10-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * New upstream release.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Nicholas D Steeves <sten@debian.org>  Sat, 17 Dec 2022 14:19:56 -0500
+
+feedparser (6.0.8-2) unstable; urgency=medium
+
+  * Team upload.
+  * gbp.conf: Add missing configuration for pristine-tar.
+
+ -- Nicholas D Steeves <sten@debian.org>  Sun, 01 May 2022 17:26:41 -0400
+
+feedparser (6.0.8-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+
+  [ Jochen Sprickerhof ]
+  * New upstream version 6.0.8 (Closes: #946788, #948467, #964816, #997649)
+  * Update d/copyright
+  * Drop upstream applied patches
+  * Bump policy and debhelper versions
+  * Update packaging
+
+ -- Jochen Sprickerhof <jspricke@debian.org>  Tue, 02 Nov 2021 09:56:58 +0100
+
+feedparser (5.2.1-3) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * Team upload.
+  * Patch: Use base64.decodebytes() directly to support Python 3.9.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 15 Oct 2020 15:48:44 -0700
+
+feedparser (5.2.1-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/changelog: Remove trailing whitespaces
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Carl Suster ]
+  * d/control: Remove myself from Uploaders
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 10 to 12.
+  * Set upstream metadata fields: Bug-Database, Repository, Repository-
+    Browse.
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #936511
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 23 Jan 2020 23:07:16 -0500
+
+feedparser (5.2.1-1) unstable; urgency=medium
+
+  [ Jackson Doak ]
+  * New upstream release (Closes: #876413)
+  * Drop chardet.diff, fixed upstream
+  * Drop debian/upstream/, no longer needed
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+
+  [ Carl Suster ]
+  * Fixed upstream URL googlecode -> github
+  * Convert from git-dpm to gbp
+  * Bump debhelper compat to 10
+  * Add myself to uploaders
+  * Add 2 patches to skip some failing tests
+  * Switch to pybuild:
+    - Build-Depend on dh-python
+    - Remove some overrides in rules
+    - Remove debian/*.install files
+    - Add debian/python3-feedparser.pyinstall to install sgmllib3
+    - Add debian/clean to remove the egg file
+    - Update patch to cope with the above installing the library in a different
+      location on the python path:
+      (feedparser_sgmllib3 -> feedparser_debian.sgmllib3)
+  * Bump standards version to 4.1.1, no changes needed
+  * Use HTTPS URL for PyPi in watch file
+  * Remove executable bit from egg files and sgmllib2 files
+
+ -- Carl Suster <carl@contraflo.ws>  Sat, 02 Dec 2017 12:58:59 +1100
+
+feedparser (5.1.3-3) unstable; urgency=medium
+
+  * Fix HTTP auth in python 3 (Closes: #760078)
+  * Convert debian/copyright to machine-readable format
+
+ -- Etienne Millon <me@emillon.org>  Tue, 02 Sep 2014 10:59:53 +0200
+
+feedparser (5.1.3-2) unstable; urgency=medium
+
+  * Fix status reported after a redirect (Closes: #738102)
+  * Bump Standards-Version to 3.9.5 (no changes needed)
+  * Refresh patch offsets
+
+ -- Etienne Millon <me@emillon.org>  Tue, 11 Feb 2014 18:20:39 +0100
+
+feedparser (5.1.3-1) unstable; urgency=low
+
+  * New upstream release (Closes: #721768).
+      - Cherry-pick a patch to make python3-feedparser
+        compatible with python3-chardet.
+  * Update my email address.
+  * Remove useless override now that Lintian knows about python3-feedparser.
+
+ -- Etienne Millon <me@emillon.org>  Thu, 12 Sep 2013 23:00:14 +0200
+
+feedparser (5.1.2-2) unstable; urgency=low
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Etienne Millon ]
+  * Add myself to Uploaders.
+  * Import changes from Ubuntu (version 5.1.2-1ubuntu2)
+    - Thanks to Barry Warsaw, Chuck Short, Dmitrijs Ledkovs, Jamie Strandboge,
+      and Michael Terry.
+    - Convert to dh short form.
+    - Build for Python 3 (Closes: #664199)
+    - Run the test suite during build (Closes: #649172)
+  * Bump Standards-Version to 3.9.4 (no changes needed)
+
+ -- Etienne Millon <etienne.millon@gmail.com>  Tue, 18 Jun 2013 23:05:50 +0200
+
+feedparser (5.1.2-1) unstable; urgency=high
+
+  * New upstream release. (Closes: #674167)
+  * debian/control
+    - Homepage updated. (Closes: #649855)
+    - Standards-Version updated to 3.9.3.1
+  * debian/watch fixed.
+  * debian/rules
+    - Migrated to dh_python2. (Closes: #646718)
+    - lintian debian-rules-missing-recommended-target warning fixed
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Tue, 29 May 2012 09:54:36 +0200
+
+feedparser (5.0.1-1) unstable; urgency=low
+
+  [ Carlos Galisteo ]
+  * New upstream release. (Closes: #617998) (Closes: #482775)
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Removed patch add-etag-only-if-etag-header-present.patch (fixed in 5.0)
+  * Removed patch doc_css_path.diff (fixed in 5.0)
+  * Removed patch auth_handlers_not_working.patch (fixed in 5.0).
+  * Removed patch feedparser_utf8_decoding.patch (fixed in 5.0).
+  * Removed patch democracynow_feedparser_fix.patch (fixed in 5.0).
+  * Removed patch title_override.patch (fixed in 5.0).
+  * Removed patch doc_css_path.diff (fixed in 5.0).
+  * Fixes CVE-2011-1156
+  * Fixes CVE-2011-1157
+  * Fixes CVE-2011-1158
+  * debian/control
+    - Standards-Version updated to 3.9.1
+    - Binary package depends on ${misc:Depends}
+    - Build-depends on python instead of python-dev as lintian suggested.
+  * debian/watch
+    - watch file looks for *.tar.gz rather than .zip
+  * Headers added to patches
+
+  [ Jakub Wilk ]
+  * debian/rules:
+    - Include /usr/share/python/python.mk only if it exists.
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Wed, 30 Mar 2011 20:25:50 +0200
+
+feedparser (4.1-14) unstable; urgency=low
+
+  [ Carlos Galisteo ]
+  * Build with Python 2.6 (Closes: #527046) (Thanks to Alessio Treglia)
+  * debian/rules:
+    - Include /usr/share/python/python.mk.
+    - Add py_setup_install_args macro to setup.py install options.
+  * debian/control:
+    - Set XS-Python-Version to all
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Tue, 05 May 2009 17:38:14 +0200
+
+feedparser (4.1-13) unstable; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Carlos Galisteo ]
+  * debian/rules
+    - dh_pysupport call moved (Closes: #516192)
+    - --install-lib removed.
+  * debian/control
+    - Using XS-Python-Version instead of pyversions.
+    - Standards-Version updated to 3.8.1
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Mon, 06 Apr 2009 10:58:38 +0200
+
+feedparser (4.1-12) unstable; urgency=low
+
+  [ Jan Dittberner ]
+  * add debian/README.source
+  * refreshed patches
+
+  [ Carlos Galisteo ]
+  * Added feedparser_utf8_decoding.patch (Closes: #500088). Thanks to David
+    Futcher.
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Thu, 25 Sep 2008 10:51:35 +0000
+
+feedparser (4.1-11) unstable; urgency=low
+
+  [ Carlos Galisteo ]
+  * debian/control
+    - Homepage field added.
+  * Standards-Version updated (3.8.0)
+  * Added override_title.patch (Closes: #490613)
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Mon, 07 Jul 2008 15:29:58 +0000
+
+feedparser (4.1-10) unstable; urgency=low
+
+  [ Carlos Galisteo ]
+  * New patch fixes errors parsing democracynow.org (and probably
+    some others) feeds. Thanks to Thomas Perl for the patch and for the
+    notice. Ubuntu bug #179208.
+
+  [ Sandro Tosi ]
+  * debian/control
+    - Uniform Vcs-Browser field (points to trunk dir now)
+
+  [ Piotr Ożarowski ]
+  * Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now)
+  * Bump Standards-Version to 3.7.3 (no changes needed)
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Wed, 02 Jan 2008 19:57:22 +0100
+
+feedparser (4.1-9) unstable; urgency=low
+
+  * Added patch for fixing auth handlers. (Closes: #431564)
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Mon, 06 Aug 2007 10:16:00 +0000
+
+feedparser (4.1-8) unstable; urgency=low
+
+  [ Carlos Galisteo ]
+  * Added patch which fixes the ".etag is always present" bug.(Closes: #411388)
+  * Build-depends on quilt for patches management.
+  * Not recommending python-iconvcodec, which is not available anymore. (Closes: #429303)
+  * Suggests python-utidylib
+  * Python modules team added to Uploaders.
+  * Some minor packaging fixes (Provides field removed, postinst and prerm removed)
+  * debian/rules cleaned up (dh_installdocs argument revoved, dh_link and
+    dh_strip removed)
+
+  [ Piotr Ożarowski ]
+  * Added watch file
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Sat, 30 Jun 2007 11:36:58 +0200
+
+feedparser (4.1-7) unstable; urgency=low
+
+  * Fixed css link for *.html inside /doc. (Closes: #405343)
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Tue,  9 Jan 2007 15:27:45 +0000
+
+feedparser (4.1-6) unstable; urgency=low
+
+  * Author email fixed in debian/copyright (Closes: #397688)
+  * Recommends python-chardet in debian/control (Closes: #397798)
+  * Recommends python-libxml2 in debian/control (Closes: #397800)
+  * Recommends python-iconvcodec in debian/control (Closes: #397801)
+  * Removed dh_python in debian/rules.
+  * feedparser.py is now executable (acording to #368792)
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Sun, 19 Nov 2006 19:59:49 +0000
+
+feedparser (4.1-5) unstable; urgency=low
+
+  * New maintainer. (Closes: #374499: ITA: feedparser -- adoping
+    feedparser module - Debian Bug report logs).
+  * pycompat file added.
+  * Build-depends on python-dev instead of python-all-dev.
+  * XS-Python-Version moved to debian/pyversion.
+  * Switched to ${python:Provides}
+
+ -- Carlos Galisteo <cgalisteo@k-rolus.net>  Fri, 21 Jul 2006 09:11:24 +0000
+
+feedparser (4.1-4) unstable; urgency=low
+
+  * Update for new Python policy. (XS-Python-Version >= 2.1)
+
+ -- Joe Wreschnig <piman@debian.org>  Tue, 13 Jun 2006 14:15:49 -0500
+
+feedparser (4.1-3) unstable; urgency=low
+
+  * Use python-support.
+  * Provide python2.4-feedparser for Python policy compatibility.
+    (Closes: #358900)
+  * Standards-Version 3.7.2 (no changes necessary).
+
+ -- Joe Wreschnig <piman@debian.org>  Sat, 13 May 2006 01:47:11 -0500
+
+feedparser (4.1-2) unstable; urgency=low
+
+  * Build-Dep on non-python-support-ified debhelper.
+
+ -- Joe Wreschnig <piman@debian.org>  Tue, 17 Jan 2006 20:46:05 -0600
+
+feedparser (4.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build-Dep on python-dev. (Closes: #348211)
+
+ -- Joe Wreschnig <piman@debian.org>  Mon, 16 Jan 2006 23:47:28 -0600
+
+feedparser (3.3+cvs20051220-1) unstable; urgency=low
+
+  * Initial release. (Closes: #326236)
+  * Fix unterminated string in feedparser.py.
+  * Use a snapshot of 4.0 because it's under a proper license, and it
+    can load many more feeds. All tests pass.
+
+ -- Joe Wreschnig <piman@debian.org>  Tue, 20 Dec 2005 23:49:02 -0600
